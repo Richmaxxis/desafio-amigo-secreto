@@ -86,6 +86,7 @@ function condicionesIniciales() {
             alert ("El siguente es el ultimo Nombre sorteado, reinicie el sorteo")
         }
     
+        
 }
 
 function reiniciarJuego() {
