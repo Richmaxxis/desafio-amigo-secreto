@@ -81,6 +81,10 @@ function condicionesIniciales() {
         // Limpia el resultado del sorteo
         let resultadoDeSorteo = document.getElementById("resultado");
         resultadoDeSorteo.innerHTML = ""; // Limpia el resultado del sorteo
+
+        if (listaNombresAgregados== 0 ) {
+            alert ("El siguente es el ultimo Nombre sorteado, reinicie el sorteo")
+        }
     
 }
 
