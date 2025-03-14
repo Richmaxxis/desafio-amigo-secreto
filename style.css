@@ -2,7 +2,7 @@
     --color-primary: #4B69FD;
     --color-secondary: #FFF9EB;
     --color-tertiary: #C4C4C4;
-    --color-button: #fe652b;
+    --color-button: #4D55CC;
     --color-button-hover: #e55720;
     --color-text: #444444;
     --color-white: #FFFFFF;
@@ -88,8 +88,10 @@ body {
 }
 
 .button-container {
-    width: 300px;
-    justify-content: center;
+    display: flex; /* Habilita el uso de flexbox */
+    justify-content: center; /* Centra los botones horizontalmente */
+    gap: 10px; /* Espacio entre los botones (opcional) */
+    width: 35%;
 }
 
 /* Estilos de entrada de texto */

@@ -21,30 +21,69 @@ function agregarAmigo() {
     } 
   
 }
+
+
 function ver() {
+    // Obtiene el elemento de la lista donde se mostrarán los nombres
     let lista = document.getElementById("listaAmigos");
-   lista.innerHTML = ""
+    
+    // Limpia el contenido actual de la lista
+    lista.innerHTML = "";
 
-   for (let i = 0; i < listaNombresAgregados.length; i++) {
-    let nuevoNombre = document.createElement("li");
-    nuevoNombre.textContent = "• " + listaNombresAgregados[i]
-    lista.appendChild(nuevoNombre)
-   }
-
+    // Recorre el array listaNombresAgregados
+    for (let i = 0; i < listaNombresAgregados.length; i++) {
+        // Crea un nuevo elemento <li> para cada nombre
+        let nuevoNombre = document.createElement("li");
+        
+        // Asigna el texto del nuevo elemento <li>, añadiendo un punto antes del nombre
+        nuevoNombre.textContent = "• " + listaNombresAgregados[i];
+        
+        // Agrega el nuevo elemento <li> a la lista en el HTML
+        lista.appendChild(nuevoNombre);
+    }
 }
 
-
 function sortearAmigo() {
-  
-//sortea un nombre del array  listaNombresAgregados
+    
+    // Verificar si la lista está vacía
+    if (listaNombresAgregados.length === 0) {
+        console.log("No hay más amigos para sortear.");
+        return; // Salir de la función si no hay más nombres
+    }
+
+    // Sortea un nombre del array listaNombresAgregados
     let nombreAlAzar = Math.floor(Math.random() * listaNombresAgregados.length);
     let nombreElegido = listaNombresAgregados[nombreAlAzar];
-  console.log (nombreElegido)
-  
-    // Crear el elemento <li> y agregarlo a la lista
+    
+    // Limpiar el resultado anterior
     let resultadoDeSorteo = document.getElementById("resultado");
+    resultadoDeSorteo.innerHTML = ""; // Limpia el contenido anterior
+
+    // Crear el elemento <li> y agregarlo a la lista
     let nombreSeleccionado = document.createElement("li");
     nombreSeleccionado.textContent = nombreElegido;
     resultadoDeSorteo.appendChild(nombreSeleccionado);
+
+    // Eliminar el nombre elegido del array
+    listaNombresAgregados.splice(nombreAlAzar, 1);
+
 }
 
+
+function condicionesIniciales() {
+        LimpiarCaja(); // Limpia la caja de entrada
+        listaNombresAgregados = []; // Reinicia la lista de nombres
+    
+        // Limpia el contenido de la lista de amigos en el HTML
+        let lista = document.getElementById("listaAmigos");
+        lista.innerHTML = ""; // Limpia la lista de amigos
+    
+        // Limpia el resultado del sorteo
+        let resultadoDeSorteo = document.getElementById("resultado");
+        resultadoDeSorteo.innerHTML = ""; // Limpia el resultado del sorteo
+    
+}
+
+function reiniciarJuego() {
+condicionesIniciales()
+}
