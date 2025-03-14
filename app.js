@@ -67,6 +67,10 @@ function sortearAmigo() {
     // Eliminar el nombre elegido del array
     listaNombresAgregados.splice(nombreAlAzar, 1);
 
+    if (listaNombresAgregados== 0 ) {
+        alert ("El siguente es el ultimo Nombre sorteado, reinicie el sorteo")
+    }
+
 }
 
 
@@ -82,9 +86,6 @@ function condicionesIniciales() {
         let resultadoDeSorteo = document.getElementById("resultado");
         resultadoDeSorteo.innerHTML = ""; // Limpia el resultado del sorteo
 
-        if (listaNombresAgregados== 0 ) {
-            alert ("El siguente es el ultimo Nombre sorteado, reinicie el sorteo")
-        }
     
         
 }
